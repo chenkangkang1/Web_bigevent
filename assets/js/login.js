@@ -57,4 +57,34 @@ $(function () {
   })
 
   // 发起登录的Ajax请求
+  $('#form-login').click(function (e) {
+    // 组阻止默认提交行为
+    e.preventDefault()
+    console.log('点击了登录按钮')
+    console.log($('.dl-zh').val())
+    console.log($('.dl-pwd').val())
+
+    if ($('.dl-zh').val() && $('.dl-pwd').val()) {
+      $.ajax({
+        type: 'POST',
+        url: 'http://big-event-api-t.itheima.net/api/login',
+        data: {
+          username: $('.dl-zh').val(),
+          password: $('.dl-pwd').val(),
+        },
+        success: function (res) {
+          if (res.status == 0) {
+            layer.msg('登录成功！')
+            // 将登陆成功得到的token字符串，保存到localStorage中
+            localStorage.setItem('token', res.token)
+            console.log(res.token)
+            // 跳转页面到index后台页面
+            location.href = './index.html'
+          } else {
+            return layer.msg('登陆失败！')
+          }
+        },
+      })
+    }
+  })
 })
