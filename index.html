@@ -14,6 +14,8 @@
     <script src="/assets/lib/jquery.js"></script>
     <!-- 导入自己封装的 baseAPI -->
     <script src="/assets/js/baseAPI.js"></script>
+
+    <script src="/assets/js/index.js"></script>
   </head>
   <body class="layui-layout-body">
     <div class="layui-layout layui-layout-admin">
@@ -31,7 +33,9 @@
               个人中心
             </a>
             <dl class="layui-nav-child">
-              <dd><a href="">基本资料</a></dd>
+              <dd>
+                <a href="./user/user_info.html" target="fm"><i class="layui-icon layui-icon-app"></i>基本资料</a>
+              </dd>
               <dd><a href="">更换头像</a></dd>
               <dd><a href="">重置密码</a></dd>
             </dl>
@@ -100,6 +104,5 @@
     <!-- 导入 layui 的JS文件 -->
     <script src="/assets/lib/layui/layui.all.js"></script>
     <!-- 导入自己的 js 文件 -->
-    <script src="/assets/js/index.js"></script>
   </body>
 </html>
