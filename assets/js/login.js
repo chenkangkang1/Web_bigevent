@@ -79,7 +79,9 @@ $(function () {
             localStorage.setItem('token', res.token)
             console.log(res.token)
             // 跳转页面到index后台页面
-            location.href = './index.html'
+            setTimeout(function () {
+              location.href = './index.html'
+            }, 1000)
           } else {
             return layer.msg('登陆失败！')
           }
